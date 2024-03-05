@@ -1,0 +1,61 @@
+This is sample README
+
+Approach Used to solve this assignment step by step
+
+1.Create Git Repository:
+
+mkdir my-exciting-project
+cd my-exciting-project
+git init
+
+2.Create Standard Branches:
+
+git checkout -b develop
+
+3.Create Feature Branch and Add Changes
+
+git checkout -b feature/initial-setup
+echo "This is a sample README." > README
+echo "This is a sample LICENSE." > LICENSE
+echo -e "#!/bin/python\nprint('Hello, World!')" > my-awesome-script.py
+git add .
+git commit -m "Added initial setup"
+
+4.Merge Changes to Main Branches
+
+git checkout develop
+git merge feature/initial-setup
+git checkout master
+git merge develop
+
+5.Resolve Merge Conflicts:
+
+git checkout develop
+git checkout -b feature/enhancement-1
+git add my-awesome-script.py
+git commit -m "Updated print statement"
+git checkout develop
+git checkout -b feature/enhancement-2
+git add my-awesome-script.py
+git commit -m "Updated print statement"
+git checkout develop
+git merge feature/enhancement-1
+git merge feature/enhancement-2
+
+6.Amend Commits
+
+git checkout develop
+git checkout -b feature/next-awesome-thing
+git add my-awesome-script.py
+git commit -m "Added a comment"
+git commit --amend -m "Added an awesome comment"
+
+7.Drop Commits
+
+git reset --hard HEAD~1
+
+8.Squash Commits
+
+git checkout develop
+git checkout -b feature/part-1-finale
+git rebase -i HEAD~3
